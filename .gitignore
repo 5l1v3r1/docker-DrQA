@@ -1,0 +1,16 @@
+WebQuestions-test.json.bz2
+CuratedTrec-test.txt
+CuratedTrec.tar.gz
+WebQuestions-train.json.bz2
+CuratedTrec-train.txt
+SQuAD-v1.1-dev.json
+freebase-entities.txt.gz
+SQuAD-v1.1-train.json
+java-8-openjdk-amd64
+single.mdl
+multitask.mdl
+stanford-corenlp-full-2017-06-09.zip
+not-using-nlp
+docs-tfidf-ngram=2-hash=16777216-tokenizer=simple.npz.gz
+docs.db.gz
+fair-data_drqa_data.tar.gz
