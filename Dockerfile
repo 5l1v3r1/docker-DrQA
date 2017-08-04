@@ -6,9 +6,9 @@ RUN git clone https://github.com/facebookresearch/DrQA.git \
   && cd DrQA; pip install -r requirements.txt; python setup.py develop
 WORKDIR DrQA
 
-## not using network for heavy files.
-#COPY stanford-corenlp-full-2017-06-09.zip /tmp/stanford-corenlp-full-2017-06-09.zip
-#RUN sed -i -e 's!^wget -O "stanford-corenlp-full-2017-06-09.zip" "http://nlp.stanford.edu/software/stanford-corenlp-full-2017-06-09.zip"$!!' /DrQA/install_corenlp.sh
+# not using network for heavy files.
+COPY stanford-corenlp-full-2017-06-09.zip /tmp/stanford-corenlp-full-2017-06-09.zip
+RUN sed -i -e 's!^wget -O "stanford-corenlp-full-2017-06-09.zip" "http://nlp.stanford.edu/software/stanford-corenlp-full-2017-06-09.zip"$!!' /DrQA/install_corenlp.sh
 
 RUN apt-get update && apt-get install -y unzip sed
 RUN echo corenlp > input \
