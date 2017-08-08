@@ -32,13 +32,13 @@ COPY SQuAD-v1.1-dev.json /DrQA/data/datasets/SQuAD-v1.1-dev.json
 COPY CuratedTrec-test.txt /DrQA/data/datasets/CuratedTrec-test.txt
 COPY CuratedTrec-train.txt /DrQA/data/datasets/CuratedTrec-train.txt
 
-RUN mkdir /DrQA/data/wikipedia /DrQA/data/reader
+RUN mkdir -p /DrQA/data/wikipedia /DrQA/data/reader
 COPY docs-tfidf-ngram=2-hash=16777216-tokenizer=simple.npz.gz /DrQA/data/wikipedia/docs-tfidf-ngram=2-hash=16777216-tokenizer=simple.npz.gz
 COPY docs.db.gz /DrQA/data/wikipedia/docs.db.gz
 COPY multitask.mdl /DrQA/data/reader/multitask.mdl
 COPY single.mdl /DrQA/data/reader/single.mdl
-RUN gunzip /DrQA/data/wikipedia/docs-tfidf-ngram=2-hash=16777216-tokenizer=simple.npz.gz \
-  && gunzip /DrQA/data/wikipedia/docs.db.gz
+RUN gunzip -f /DrQA/data/wikipedia/docs-tfidf-ngram=2-hash=16777216-tokenizer=simple.npz.gz \
+  && gunzip -f /DrQA/data/wikipedia/docs.db.gz
 
 COPY java-8-openjdk-amd64/ /DrQA/java-8-openjdk-amd64
 RUN ln -s /DrQA/java-8-openjdk-amd64/jre/bin/java* /usr/bin/java
