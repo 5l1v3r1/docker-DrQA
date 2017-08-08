@@ -19,7 +19,8 @@
 ### then, build and run
 ```
 % docker build -t drqa .
-# not sh, use bash
+
+not sh, use bash
 % docker run -it drqa /bin/bash 
 ```
 ### follow "Quick Start: Demo" on the original repository.
