@@ -17,7 +17,10 @@
 - java-8-openjdk-amd64
 ### if you don't place the files above, plese comment-out COPY and RUN-sed in Dockerfile.
 ### then, build and run
+```
 % docker build -t drqa .
+# not sh, use bash
 % docker run -it drqa /bin/bash 
+```
 ### follow "Quick Start: Demo" on the original repository.
 https://github.com/facebookresearch/DrQA#quick-start-demo
